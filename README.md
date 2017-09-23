@@ -1,5 +1,3 @@
-# my_web
-
 ## Etape 1 : Installation d'un Serveur Web
 
 #### 1. Vérifier si la distribution est à jour
