@@ -107,10 +107,10 @@ Décommenter cetter ligne<br>
 Création du nouvel accès<br>
 `sudo nano /etc/apache2/sites-available/mysql.wp-site.fr.conf`<br><br>
 Ajoutez: <br>
-`<VirtualHost *:80>`
-`ServerAdmin`     `admin@wp-site.fr`
-`ServerName`      `mysql.wp-site.fr`
-`DocumentRoot`    `/usr/share/phpmyadmin`
+`<VirtualHost *:80>`<br>
+`ServerAdmin`     `admin@wp-site.fr`<br>
+`ServerName`      `mysql.wp-site.fr`<br>
+`DocumentRoot`    `/usr/share/phpmyadmin`<br>
 `</VirtualHost>`<br><br>
 Verification de la config, activer le site et recharger apache<br>
 `sudo apche2ctl configtest`<br>
