@@ -91,5 +91,42 @@ Executer le script d’installation<br>
 ## Etape 3 : Sauvegarde de log
 Créer une autre machine sur la VM<br>
 Configurer en mode bridge pour la connection<br>
+Tester le ping sur chaque machine <br>
+`ping ip de la 2nde machine`
+`ping ip de la 1ere machine`
 
+## Bonus
+### vHost pour mysql phpmyadmin <br>
+#### Supprimer la config présente 
+`sudo rm -rf /usr/share/phpmyadmin/setup`<br>
+#### Modifier l'url d'acces de phpmyadmin<br>
+Ouvrez apache.conf<br>
+`sudo nano /etc/phpmyadmin/apache.conf`<br><br>
+Décommenter cetter ligne<br>
+`Alias /phpmyadmin /usr/share/phpmyadmin` <br><br>
+Création du nouvel accès<br>
+`sudo nano /etc/apache2/sites-available/mysql.wp-site.fr.conf`<br><br>
+Ajoutez: <br>
+`<VirtualHost *:80>`
+`ServerAdmin`     `admin@wp-site.fr`
+`ServerName`      `mysql.wp-site.fr`
+`DocumentRoot`    `/usr/share/phpmyadmin`
+`</VirtualHost>`<br><br>
+Verification de la config, activer le site et recharger apache<br>
+`sudo apche2ctl configtest`<br>
+Si vous voyez `syntax OK` c'est Bon.<br><br>
 
+Activer le site<br>
+`sudo a2ensite mysql.wp-site.fr`<br><br>
+Ajouter 127.0.0.1 mysql.wp-site.fr dans le fichier /etc/hosts<br>
+`sudo nano /etc/hosts`<br>
+Redémarrage d'apache<br>
+`sudo service apache2 restart`<br><Br>
+
+### url-rewriting
+Activer le mod_rewrite<br>
+`sudo a2enmode rewrite`<br>
+`sudo a2enmod rewrite`<br>
+`sudo systemctl restart apache2`<br>
+`sudo service apache2 restart`<br><br>
+Configurer htaccess<br>
