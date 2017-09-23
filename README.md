@@ -92,8 +92,15 @@ Executer le script d’installation<br>
 Créer une autre machine sur la VM<br>
 Configurer en mode bridge pour la connection<br>
 Tester le ping sur chaque machine <br>
-`ping ip de la 2nde machine`
-`ping ip de la 1ere machine`
+`ping ip de la 2nde machine`<br>
+`ping ip de la 1ere machine`<br><br>
+Création de ssh public et private key<br>
+Dans la VM1 `ssh-keygen`<br>
+Copier la clé public a la VM2 utilisant ssh-copy-id<br>
+`ssh-copy-id -i ~/.ssh/id_rsa.pub VM2`<br>
+Saisissez le Mot de passe<br>
+
+
 
 ## Bonus
 ### vHost pour mysql phpmyadmin <br>
