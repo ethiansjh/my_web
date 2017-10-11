@@ -54,7 +54,7 @@ Placez sur le dossier où vous avez téléchargé wordpress<br>
 `sudo mkdir /var/www/wordpress`<br>
 `cp -r wordpress /var/www (en sudo)`<br>
 `sudo chown -R www-data:www-data /var/www/wordpress`<br>
-`sudo find /var/www/wordpressl -type d -exec chmod 755 {} \;`<br>
+`sudo find /var/www/wordpress -type d -exec chmod 755 {} \;`<br>
 `sudo find /var/www/wordpress -type f -exec chmod 644 {} \;`<br><br>
 ### Mise en place de la vHost
 `cd /etc/apache2/sites-available/`<br>
